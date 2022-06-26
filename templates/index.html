@@ -1,0 +1,232 @@
+{% extends 'partials/_nav.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Emre Yıldız Dinamik Portfolio Uygulaması</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio - v3.7.0
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Adem Yıldız</h1>
+      <p>I'm <span class="typed" data-typed-items="Electric, Developer, Freelancer, Photographer"></span></p>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-title">
+          <h1>Hakkımda</h1>
+          <p>Hakkımda</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="{% static 'assets/img/profile-img.jpeg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>Elektirik Elektronik &amp; Mühendisi.</h3>
+            <p class="fst-italic">
+              Sakarya Üniversitesi Elektirik Elektronik Mühendislik Alanı Mezunu... <br>Kişisel Bilgilerim...</br> 
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  {% for about in about %}
+                  <li><i class="bi bi-chevron-right"></i> <strong>Doğum Günü:</strong> <span>{{about.birtday}}</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>{{about.website}}</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Telefon:</strong> <span>{{about.phone}}</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Şehir:</strong> <span>{{about.city}}</span></li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  {% for about in about %}
+                  <li><i class="bi bi-chevron-right"></i> <strong>Yaş:</strong> <span>{{about.age}}</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Meslek:</strong> <span>{{about.jop}}</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>{{about.email}}</span></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+            <p>
+              acıklama
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Yetenekler</h2>
+          <p>Yetkin Olduğum Konular..</p>
+        </div>
+
+        <div class="row skills-content">
+          {% for skilss in skilss %}
+          <div class="col-lg-6" data-aos="fade-up">
+
+            <div class="progress">
+
+              <span class="skill">{{skilss.name}} <i class="val">{{siklss.yuz}}</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+
+              </div>
+            </div>
+
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Geçmiş</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up">
+            <h3 class="resume-title">Sumary</h3>
+            <div class="resume-item pb-0">
+              <h4>Adem Yıldız</h4>
+              <p><em>Bilgi..</em></p>
+              <ul>
+                <li>Adres</li>
+                <li>Numara</li>
+                <li>Mail</li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title">Öğrenim</h3>
+            {% for education in education %}
+            <div class="resume-item">
+              <h4>{{education.name}}</h4>
+              <h5>{{education.year}}</h5>
+              <p><em>{{education.bolum}}</em></p>
+              <p>{{education.descripson}}</p>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              {% for experience in experience %}
+              <div class="resume-item">
+                <h4>{{experience.name}}</h4>
+                <h5>{{experience.year}}</h5>
+                <p><em>{{experience.bolum}}</em></p>
+                <p>{{experience.descripson}}</p>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Resume Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>İcratlarım</h2>
+          <p>Bu zamana kadar yaptığım icraatlar</p>
+        </div>
+
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+          {% for portfolio in portfolio %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="{{portfolio.image.url}}" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="{{portfolio.image.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                <a href="portfoli/" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Servisler</h2>
+          <p></p>
+        </div>
+        {% for skilss in skilss %}
+        <div class="row">
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+            <div class="icon"><i class="bi bi-briefcase"></i></div>
+            <h4 class="title"><a href="">{{skilss.name}}</a></h4>
+            <p class="description">{{skilss.desdrip}}</p>
+          </div>
+          {% endfor %}
+      </div>
+    </section><!-- End Services Section -->
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  
+{% endblock %}

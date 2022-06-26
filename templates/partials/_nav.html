@@ -1,0 +1,52 @@
+{% load static %}
+
+<header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="{% static 'assets/img/profile-img.jpeg' %}" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Adem Yıldız</a></h1>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          {% for menu in menu %}
+          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>{{menu.name}}</span></a></li>
+          {% endfor %}
+        </ul>
+
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+  {% block content %}
+  {% endblock %}
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Emre Yıldız</span></strong>
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/typed.js/typed.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
