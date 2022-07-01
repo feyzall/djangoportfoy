@@ -10,7 +10,7 @@
       <nav id="navbar" class="nav-menu navbar">
         <ul>
           {% for menu in menu %}
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>{{menu.name}}</span></a></li>
+          <li class="{% if '' == request.path %} active {% endif %}"><a href="{{menu.subname}}" class="nav-link scrollto "><i class="bx bx-home"></i> <span>{{menu.name}}</span></a></li>
           {% endfor %}
         </ul>
 

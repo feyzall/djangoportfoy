@@ -1,5 +1,5 @@
 from pyexpat import model
-from unicodedata import name
+from unicodedata import category, name
 from django.db import models
 
 
@@ -14,6 +14,7 @@ class Experience(models.Model):
 class Menu(models.Model):
     name=models.CharField(max_length=200)
     icon=models.ImageField(upload_to="course/%Y/%m/%d")
+    subname=models.CharField(max_length=200, default='')
     def __str__(self):
         return self.name
 
@@ -54,6 +55,10 @@ class Education(models.Model):
 class Portfolio(models.Model):
     name=models.CharField(max_length=200)
     image=models.ImageField(upload_to="course/%Y/%m/%d")
+    category=models.CharField(max_length=200 , default='')
+    client=models.CharField(max_length=200, default='')
+    projectdt=models.CharField(max_length=200, default='')
+    url=models.CharField(max_length=200, default='')
     def __str__(self):
         return self.name
 

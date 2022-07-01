@@ -20,4 +20,4 @@ def index(request):
         'testimonials':testimonials,
         'experience':experience,
     }
-    return render(request, 'index.html',context)
+    return render(request, 'index.html' ,context)
